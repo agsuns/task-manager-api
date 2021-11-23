@@ -3,6 +3,7 @@ const app = express();
 const tasksRouter = require('./routes/tasks');
 const PORT = process.env.PORT || 5001;
 const connectDb = require('./db/connect');
+const errorHandler = require('./middleware/errorHandler');
 require('dotenv').config();
 
 const start = async () => {
@@ -18,6 +19,9 @@ const start = async () => {
   }
 };
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use('/api/v1/tasks', tasksRouter);
+app.use(errorHandler);
 
 start();
