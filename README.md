@@ -13,6 +13,7 @@ nodejs v.16.2.0
 É necessário ter um arquivo .env que contenha a string de conexão com uma base de dados Mongo, na variável de ambiente MONGO_URI.
 
 <br/>
+
 ## Como rodar?
 
 ```
